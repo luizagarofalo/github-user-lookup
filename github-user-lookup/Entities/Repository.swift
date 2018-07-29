@@ -1,16 +1,14 @@
 //
-//  User.swift
+//  Repository.swift
 //  github-user-lookup
 //
-//  Created by Luiza Collado Garofalo on 28/07/18.
+//  Created by Luiza Collado Garofalo on 29/07/18.
 //  Copyright © 2018 Luiza Garofalo. All rights reserved.
 //
 
 import Foundation
 
-typealias User = [UserElement]
-
-struct UserElement: Codable {
+struct Repository: Codable {
     let id: Int?
     let name: String?
     let owner: Owner?

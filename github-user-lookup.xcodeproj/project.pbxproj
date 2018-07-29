@@ -16,7 +16,10 @@
 		6AF366DB210D4D840097114C /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366DA210D4D840097114C /* UserDetailsViewController.swift */; };
 		6AF366DE210D4DAB0097114C /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366DC210D4DAB0097114C /* RepositoryTableViewCell.swift */; };
 		6AF366DF210D4DAB0097114C /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF366DD210D4DAB0097114C /* RepositoryTableViewCell.xib */; };
-		6AF366E1210D556B0097114C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E0210D556B0097114C /* User.swift */; };
+		6AF366E3210D57220097114C /* RequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E2210D57220097114C /* RequestGateway.swift */; };
+		6AF366E5210D57F00097114C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E4210D57F00097114C /* Result.swift */; };
+		6AF366E7210D58AB0097114C /* RequestNetworkGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */; };
+		6AF366E9210D82170097114C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E8210D82170097114C /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,10 @@
 		6AF366DA210D4D840097114C /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		6AF366DC210D4DAB0097114C /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		6AF366DD210D4DAB0097114C /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
-		6AF366E0210D556B0097114C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6AF366E2210D57220097114C /* RequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGateway.swift; sourceTree = "<group>"; };
+		6AF366E4210D57F00097114C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNetworkGateway.swift; sourceTree = "<group>"; };
+		6AF366E8210D82170097114C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +114,8 @@
 		6AF366D4210D3FED0097114C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				6AF366E0210D556B0097114C /* User.swift */,
+				6AF366E8210D82170097114C /* Repository.swift */,
+				6AF366E4210D57F00097114C /* Result.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -116,6 +123,8 @@
 		6AF366D5210D3FFF0097114C /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				6AF366E2210D57220097114C /* RequestGateway.swift */,
+				6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -246,9 +255,12 @@
 			files = (
 				6AF366B5210D3F680097114C /* AppDelegate.swift in Sources */,
 				6AF366D9210D4D560097114C /* UserLookupViewController.swift in Sources */,
+				6AF366E3210D57220097114C /* RequestGateway.swift in Sources */,
+				6AF366E7210D58AB0097114C /* RequestNetworkGateway.swift in Sources */,
 				6AF366DB210D4D840097114C /* UserDetailsViewController.swift in Sources */,
-				6AF366E1210D556B0097114C /* User.swift in Sources */,
+				6AF366E5210D57F00097114C /* Result.swift in Sources */,
 				6AF366DE210D4DAB0097114C /* RepositoryTableViewCell.swift in Sources */,
+				6AF366E9210D82170097114C /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

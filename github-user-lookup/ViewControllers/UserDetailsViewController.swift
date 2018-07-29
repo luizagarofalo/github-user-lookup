@@ -9,12 +9,23 @@
 import UIKit
 
 class UserDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var userAvatar: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var repositoriesTableView: UITableView!
+    @IBOutlet private weak var userAvatar: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var repositoriesTableView: UITableView!
+    
+    var username = ""
+    var repositories: [Repository] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.repositoriesTableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.usernameLabel.text = username
+        
         repositoriesTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil),
                                        forCellReuseIdentifier: "cell")
     }
@@ -24,12 +35,16 @@ class UserDetailsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? RepositoryTableViewCell else { return UITableViewCell() }
     
+        
+        cell.repositoryTitle.text = self.repositories[indexPath.row].name
+        cell.repositorySubtitle.text = self.repositories[indexPath.row].language
+        
         return cell
     }
 }

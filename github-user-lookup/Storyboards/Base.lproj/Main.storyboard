@@ -46,7 +46,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="search:" destination="MLu-d8-uJd" eventType="touchUpInside" id="at2-vw-KD2"/>
-                                                    <segue destination="Enz-Ez-zDq" kind="show" id="CRp-lg-jbV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -71,6 +70,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchTextField" destination="dax-tp-sgn" id="zFP-O0-dnE"/>
+                        <segue destination="Enz-Ez-zDq" kind="show" identifier="userDetailsSegue" id="OR9-dn-3PD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IK3-og-Azq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,7 +106,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-Hj-cFD">
                                 <rect key="frame" x="0.0" y="246" width="375" height="421"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
