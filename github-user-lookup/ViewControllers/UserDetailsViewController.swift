@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UserDetailsViewController.swift
 //  github-user-lookup
 //
 //  Created by Luiza Collado Garofalo on 28/07/18.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserDetailsViewController: UIViewController {
 
+    @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var repositoriesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-
