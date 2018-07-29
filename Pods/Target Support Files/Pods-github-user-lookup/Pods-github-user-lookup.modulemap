@@ -1,0 +1,6 @@
+framework module Pods_github_user_lookup {
+  umbrella header "Pods-github-user-lookup-umbrella.h"
+
+  export *
+  module * { export * }
+}

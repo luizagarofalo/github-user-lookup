@@ -17,9 +17,9 @@ class RequestNetworkGateway: RequestGateway {
                 print(error)
                 return
             }
-            
+
             guard let data = data else { return }
-            
+
             do {
                 let response = try JSONDecoder().decode([Repository].self, from: data)
                 onComplete(response)

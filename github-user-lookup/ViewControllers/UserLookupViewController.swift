@@ -9,18 +9,18 @@
 import UIKit
 
 class UserLookupViewController: UIViewController {
-    
+
     @IBOutlet weak var searchTextField: UITextField!
     private var repositories: [Repository] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     @IBAction func search(_ sender: UIButton) {
         guard let username = searchTextField.text else { return }
         RequestNetworkGateway.load(username: username) { (user: [Repository]) in
@@ -29,7 +29,7 @@ class UserLookupViewController: UIViewController {
             }
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? UserDetailsViewController {
             if let user = sender as? [Repository] {

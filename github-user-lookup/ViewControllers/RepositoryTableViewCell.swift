@@ -12,7 +12,7 @@ class RepositoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var repositoryTitle: UILabel!
     @IBOutlet weak var repositorySubtitle: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -9,24 +9,24 @@
 import Foundation
 
 struct Repository: Codable {
-    let id: Int?
+    let id: Int? // swiftlint:disable:this identifier_name
     let name: String?
     let owner: Owner?
     let htmlURL, description: String?
     let language: String?
-    
+
     enum CodingKeys: String, CodingKey {
-        case description, id, language, name, owner
+        case description, id, language, name, owner // swiftlint:disable:this identifier_name
         case htmlURL = "html_url"
     }
 }
 
 struct Owner: Codable {
     let login, avatarURL: String?
-    let id: Int?
-    
+    let id: Int? // swiftlint:disable:this identifier_name
+
     enum CodingKeys: String, CodingKey {
-        case login, id
+        case login, id // swiftlint:disable:this identifier_name
         case avatarURL = "avatar_url"
     }
 }
