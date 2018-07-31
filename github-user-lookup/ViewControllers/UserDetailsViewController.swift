@@ -6,6 +6,7 @@
 //  Copyright © 2018 Luiza Garofalo. All rights reserved.
 //
 
+import SDWebImage
 import UIKit
 
 class UserDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -24,14 +25,22 @@ class UserDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+
+    private func setup() {
+        self.repositoriesTableView.separatorInset = .zero
         self.usernameLabel.text = username
+        self.userAvatar.layer.cornerRadius = 50
+        self.userAvatar.clipsToBounds = true
+        guard let avatar = self.repositories[0].owner?.avatarURL else { return }
+        self.userAvatar.sd_setImage(with: URL(string: avatar),
+                                    placeholderImage: UIImage(named: "placeholder.png"),
+                                    options: .highPriority,
+                                    completed: nil)
 
         repositoriesTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil),
                                        forCellReuseIdentifier: "cell")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

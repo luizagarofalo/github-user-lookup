@@ -12,7 +12,7 @@ class UserLookupViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     private var repositories: [Repository] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
