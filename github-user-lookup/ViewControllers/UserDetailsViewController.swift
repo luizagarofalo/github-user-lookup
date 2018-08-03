@@ -1,11 +1,3 @@
-//
-//  UserDetailsViewController.swift
-//  github-user-lookup
-//
-//  Created by Luiza Collado Garofalo on 28/07/18.
-//  Copyright © 2018 Luiza Garofalo. All rights reserved.
-//
-
 import SDWebImage
 import UIKit
 
@@ -33,6 +25,7 @@ class UserDetailsViewController: UIViewController, UITableViewDataSource, UITabl
         self.usernameLabel.text = username
         self.userAvatar.layer.cornerRadius = 50
         self.userAvatar.clipsToBounds = true
+
         guard let avatar = self.repositories[0].owner?.avatarURL else { return }
         self.userAvatar.sd_setImage(with: URL(string: avatar),
                                     placeholderImage: UIImage(named: "placeholder.png"),

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B0AB82BBEAFCCC00FB5C932 /* Pods_github_user_lookupTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F884E00A68FC21EC43B45752 /* Pods_github_user_lookupTests.framework */; };
+		6A07A2CB2113E59F000440C6 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A07A2CA2113E59F000440C6 /* ErrorMessage.swift */; };
+		6A07A2CF2113EB5B000440C6 /* LookupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A07A2CE2113EB5B000440C6 /* LookupError.swift */; };
 		6AF366B5210D3F680097114C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366B4210D3F680097114C /* AppDelegate.swift */; };
 		6AF366BA210D3F680097114C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF366B8210D3F680097114C /* Main.storyboard */; };
 		6AF366BC210D3F680097114C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF366BB210D3F680097114C /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		0C583B795AD71BA999E8D332 /* Pods-github-user-lookup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-user-lookup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github-user-lookup/Pods-github-user-lookup.debug.xcconfig"; sourceTree = "<group>"; };
 		37A19AEB72349830511C5330 /* Pods-github-user-lookup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-user-lookup.release.xcconfig"; path = "Pods/Target Support Files/Pods-github-user-lookup/Pods-github-user-lookup.release.xcconfig"; sourceTree = "<group>"; };
 		529D6A56E41FC23847720303 /* Pods_github_user_lookup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_user_lookup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A07A2CA2113E59F000440C6 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		6A07A2CE2113EB5B000440C6 /* LookupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupError.swift; sourceTree = "<group>"; };
 		6AF366B1210D3F680097114C /* github-user-lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-user-lookup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF366B4210D3F680097114C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF366B9210D3F680097114C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			children = (
 				6AF366E8210D82170097114C /* Repository.swift */,
 				6AF366E4210D57F00097114C /* Result.swift */,
+				6A07A2CE2113EB5B000440C6 /* LookupError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -154,9 +159,10 @@
 		6AF366D7210D400F0097114C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6AF366D8210D4D560097114C /* UserLookupViewController.swift */,
-				6AF366DA210D4D840097114C /* UserDetailsViewController.swift */,
+				6A07A2CA2113E59F000440C6 /* ErrorMessage.swift */,
 				6AF366DC210D4DAB0097114C /* RepositoryTableViewCell.swift */,
+				6AF366DA210D4D840097114C /* UserDetailsViewController.swift */,
+				6AF366D8210D4D560097114C /* UserLookupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +415,8 @@
 			files = (
 				6AF366B5210D3F680097114C /* AppDelegate.swift in Sources */,
 				6AF366D9210D4D560097114C /* UserLookupViewController.swift in Sources */,
+				6A07A2CF2113EB5B000440C6 /* LookupError.swift in Sources */,
+				6A07A2CB2113E59F000440C6 /* ErrorMessage.swift in Sources */,
 				6AF366E3210D57220097114C /* RequestGateway.swift in Sources */,
 				6AF366E7210D58AB0097114C /* RequestNetworkGateway.swift in Sources */,
 				6AF366DB210D4D840097114C /* UserDetailsViewController.swift in Sources */,
