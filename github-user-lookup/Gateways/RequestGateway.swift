@@ -12,9 +12,9 @@ class RequestNetworkGateway: RequestGateway {
             if error != nil {
                 onComplete(.failure(.networkError))
             }
-            
+
             guard let data = data else { return }
-            
+
             do {
                 let response = try JSONDecoder().decode([Repository].self, from: data)
                 onComplete(.success(response))

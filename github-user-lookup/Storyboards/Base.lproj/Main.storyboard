@@ -69,7 +69,6 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="VeI-Pb-0is"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="layoutConstraint" destination="h9X-MH-iQo" id="7TQ-ZB-whd"/>
                         <outlet property="searchTextField" destination="dax-tp-sgn" id="zFP-O0-dnE"/>
                         <segue destination="Enz-Ez-zDq" kind="show" identifier="userDetailsSegue" id="OR9-dn-3PD"/>
                     </connections>
