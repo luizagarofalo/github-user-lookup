@@ -21,7 +21,6 @@
 		6AF366DF210D4DAB0097114C /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AF366DD210D4DAB0097114C /* RepositoryTableViewCell.xib */; };
 		6AF366E3210D57220097114C /* RequestGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E2210D57220097114C /* RequestGateway.swift */; };
 		6AF366E5210D57F00097114C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E4210D57F00097114C /* Result.swift */; };
-		6AF366E7210D58AB0097114C /* RequestNetworkGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */; };
 		6AF366E9210D82170097114C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF366E8210D82170097114C /* Repository.swift */; };
 		EA0A2DD9198D9F296086ABD6 /* Pods_github_user_lookup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D6A56E41FC23847720303 /* Pods_github_user_lookup.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +56,6 @@
 		6AF366DD210D4DAB0097114C /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		6AF366E2210D57220097114C /* RequestGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGateway.swift; sourceTree = "<group>"; };
 		6AF366E4210D57F00097114C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNetworkGateway.swift; sourceTree = "<group>"; };
 		6AF366E8210D82170097114C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A02CF978C24D83F1A0D639AF /* Pods-github-user-lookupTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-user-lookupTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-github-user-lookupTests/Pods-github-user-lookupTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7CFAB3E4E7C6E1AB8F8B027 /* Pods-github-user-lookupTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-user-lookupTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github-user-lookupTests/Pods-github-user-lookupTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				6AF366E2210D57220097114C /* RequestGateway.swift */,
-				6AF366E6210D58AB0097114C /* RequestNetworkGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -239,7 +236,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Luiza Garofalo";
 				TargetAttributes = {
 					6AF366B0210D3F680097114C = {
@@ -418,7 +415,6 @@
 				6A07A2CF2113EB5B000440C6 /* LookupError.swift in Sources */,
 				6A07A2CB2113E59F000440C6 /* ErrorMessage.swift in Sources */,
 				6AF366E3210D57220097114C /* RequestGateway.swift in Sources */,
-				6AF366E7210D58AB0097114C /* RequestNetworkGateway.swift in Sources */,
 				6AF366DB210D4D840097114C /* UserDetailsViewController.swift in Sources */,
 				6AF366E5210D57F00097114C /* Result.swift in Sources */,
 				6AF366DE210D4DAB0097114C /* RepositoryTableViewCell.swift in Sources */,
@@ -478,6 +474,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -485,6 +482,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -535,6 +533,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -542,6 +541,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -577,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZVJQ5QL337;
+				DEVELOPMENT_TEAM = RN2N3F8SZ7;
 				INFOPLIST_FILE = "github-user-lookup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.github-user-lookup";
@@ -593,7 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZVJQ5QL337;
+				DEVELOPMENT_TEAM = RN2N3F8SZ7;
 				INFOPLIST_FILE = "github-user-lookup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.github-user-lookup";

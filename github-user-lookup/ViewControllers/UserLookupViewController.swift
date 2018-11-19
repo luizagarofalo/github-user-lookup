@@ -4,7 +4,34 @@ class UserLookupViewController: UIViewController {
     @IBOutlet weak private var searchTextField: UITextField!
     private var repositories: [Repository] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(UserLookupViewController.keyboardWillAppear),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(UserLookupViewController.keyboardWillDisappear),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillShow,
+                                                  object: self.view.window)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide,
+                                                  object: self.view.window)
+    }
+
     @IBAction private func search(_ sender: UIButton) {
+        self.hideKeyboard()
+
         guard let username = searchTextField.text else { return }
         RequestNetworkGateway.load(username: username) { (result: Result) in
             switch result {
@@ -29,6 +56,26 @@ class UserLookupViewController: UIViewController {
                 }
             }
         }
+    }
+
+    @objc func keyboardWillAppear(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (keyboardSize.height / 2)
+            }
+        }
+    }
+
+    @objc func keyboardWillDisappear(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += (keyboardSize.height / 2)
+            }
+        }
+    }
+
+    func hideKeyboard() {
+        self.searchTextField.resignFirstResponder()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
