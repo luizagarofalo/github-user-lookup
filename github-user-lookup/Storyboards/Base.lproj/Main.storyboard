@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="roB-rz-Cbl">
-                                <rect key="frame" x="25" y="200" width="325" height="267"/>
+                                <rect key="frame" x="25" y="193.5" width="325" height="280"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-octocat" translatesAutoresizingMaskIntoConstraints="NO" id="t4n-Yu-zgK">
                                         <rect key="frame" x="42.5" y="0.0" width="240" height="160"/>
@@ -30,7 +30,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="w5Z-ML-H49">
-                                        <rect key="frame" x="0.0" y="185" width="325" height="82"/>
+                                        <rect key="frame" x="0.0" y="185" width="325" height="95"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dax-tp-sgn">
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="30"/>
@@ -38,11 +38,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-xv-gs8">
-                                                <rect key="frame" x="0.0" y="55" width="325" height="27"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-xv-gs8" customClass="TransitionButton" customModule="github_user_lookup" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="325" height="40"/>
+                                                <color key="backgroundColor" red="0.61176470588235299" green="0.85490196078431369" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="jh6-ie-6Xv"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <state key="normal" title="SEARCH">
-                                                    <color key="titleColor" red="0.4392855167388916" green="0.65753954648971558" blue="0.80970257520675659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="search:" destination="MLu-d8-uJd" eventType="touchUpInside" id="at2-vw-KD2"/>
@@ -69,8 +73,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="VeI-Pb-0is"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchButton" destination="a3d-xv-gs8" id="MLi-DW-E0o"/>
                         <outlet property="searchTextField" destination="dax-tp-sgn" id="zFP-O0-dnE"/>
-                        <segue destination="Enz-Ez-zDq" kind="show" identifier="userDetailsSegue" id="OR9-dn-3PD"/>
+                        <segue destination="Enz-Ez-zDq" kind="presentation" identifier="userDetailsSegue" id="OR9-dn-3PD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IK3-og-Azq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,11 +91,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-Hj-cFD">
-                                <rect key="frame" x="0.0" y="246" width="375" height="421"/>
+                                <rect key="frame" x="0.0" y="202" width="375" height="465"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="465"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Enz-Ez-zDq" id="cov-SQ-lm4"/>
                                             <outlet property="delegate" destination="Enz-Ez-zDq" id="ldk-0K-MzB"/>
@@ -106,7 +112,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPI-wa-guo">
-                                <rect key="frame" x="0.0" y="64" width="375" height="182"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="182"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-X5-9Lz">
                                         <rect key="frame" x="137.5" y="25" width="100" height="132"/>
@@ -126,16 +132,29 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-aY-Jju">
+                                        <rect key="frame" x="25" y="25" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ebl-po-UpR"/>
+                                            <constraint firstAttribute="width" constant="25" id="rCi-k4-Xdd"/>
+                                        </constraints>
+                                        <state key="normal" image="close-button"/>
+                                        <connections>
+                                            <action selector="close:" destination="Enz-Ez-zDq" eventType="touchUpInside" id="XyU-p4-YNu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.61001914739999996" green="0.85369139910000003" blue="0.94661706690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.61176470588235299" green="0.85490196078431369" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="eb6-aY-Jju" firstAttribute="leading" secondItem="LPI-wa-guo" secondAttribute="leading" constant="25" id="9OM-8C-ASE"/>
+                                    <constraint firstItem="eb6-aY-Jju" firstAttribute="top" secondItem="QiC-RM-G1i" secondAttribute="top" id="RIp-Sa-c9n"/>
                                     <constraint firstItem="IuC-X5-9Lz" firstAttribute="top" secondItem="LPI-wa-guo" secondAttribute="top" constant="25" id="eU2-Bw-4gC"/>
                                     <constraint firstItem="IuC-X5-9Lz" firstAttribute="centerY" secondItem="LPI-wa-guo" secondAttribute="centerY" id="pBn-P4-A3C"/>
                                     <constraint firstItem="IuC-X5-9Lz" firstAttribute="centerX" secondItem="LPI-wa-guo" secondAttribute="centerX" id="xhB-ep-oNn"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.61176470589999998" green="0.85490196080000003" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LPI-wa-guo" firstAttribute="trailing" secondItem="zoR-Hj-cFD" secondAttribute="trailing" id="Fw0-0l-PHG"/>
                             <constraint firstItem="zoR-Hj-cFD" firstAttribute="leading" secondItem="emT-CS-I00" secondAttribute="leading" id="Oru-0C-QNU"/>
@@ -177,6 +196,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close-button" width="32" height="32"/>
         <image name="github-octocat" width="600" height="315"/>
     </resources>
 </document>

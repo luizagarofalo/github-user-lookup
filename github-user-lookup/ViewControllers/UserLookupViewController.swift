@@ -2,11 +2,15 @@ import UIKit
 
 class UserLookupViewController: UIViewController {
     @IBOutlet weak private var searchTextField: UITextField!
+    @IBOutlet weak var searchButton: TransitionButton!
     private var repositories: [Repository] = []
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+
+        searchButton.cornerRadius = 20
+        searchButton.spinnerColor = .white
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(UserLookupViewController.keyboardWillAppear),
@@ -31,28 +35,35 @@ class UserLookupViewController: UIViewController {
 
     @IBAction private func search(_ sender: UIButton) {
         self.hideKeyboard()
+        searchButton.startAnimation()
 
         guard let username = searchTextField.text else { return }
         RequestNetworkGateway.load(username: username) { (result: Result) in
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "userDetailsSegue", sender: user)
+                    self.searchButton.stopAnimation(animationStyle: .expand, completion: {
+                        self.performSegue(withIdentifier: "userDetailsSegue", sender: user)
+                    })
                 }
 
             case .failure(.networkError):
                 DispatchQueue.main.async {
-                    ErrorMessage.show(title: "Oops!",
-                                      message: "A network error has occured. " +
-                        "Please, check your internet connection and try again later.",
-                                      controller: self)
+                    self.searchButton.stopAnimation(animationStyle: .shake, completion: {
+                        ErrorMessage.show(title: "Oops!",
+                                          message: "A network error has occured. " +
+                            "Please, check your internet connection and try again later.",
+                                          controller: self)
+                    })
                 }
 
             case .failure(.userNotFound):
                 DispatchQueue.main.async {
-                    ErrorMessage.show(title: "Oops!",
-                                      message: "User not found. Please, enter another username.",
-                                      controller: self)
+                    self.searchButton.stopAnimation(animationStyle: .shake, completion: {
+                        ErrorMessage.show(title: "Oops!",
+                                          message: "User not found. Please, enter another username.",
+                                          controller: self)
+                    })
                 }
             }
         }

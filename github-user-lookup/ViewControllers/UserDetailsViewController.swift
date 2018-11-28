@@ -1,7 +1,7 @@
 import SDWebImage
 import UIKit
 
-class UserDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UserDetailsViewController: TransitionViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet private weak var userAvatar: UIImageView!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var repositoriesTableView: UITableView!
@@ -35,6 +35,10 @@ class UserDetailsViewController: UIViewController, UITableViewDataSource, UITabl
 
         repositoriesTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil),
                                        forCellReuseIdentifier: "cell")
+    }
+
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
