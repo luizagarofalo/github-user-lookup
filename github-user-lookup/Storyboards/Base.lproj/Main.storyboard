@@ -93,10 +93,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-Hj-cFD">
                                 <rect key="frame" x="0.0" y="202" width="375" height="465"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NG1-3K-NHf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="465"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Enz-Ez-zDq" id="cov-SQ-lm4"/>
                                             <outlet property="delegate" destination="Enz-Ez-zDq" id="ldk-0K-MzB"/>
@@ -133,12 +133,12 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-aY-Jju">
-                                        <rect key="frame" x="25" y="25" width="25" height="25"/>
+                                        <rect key="frame" x="325" y="25" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="ebl-po-UpR"/>
                                             <constraint firstAttribute="width" constant="25" id="rCi-k4-Xdd"/>
                                         </constraints>
-                                        <state key="normal" image="close-button"/>
+                                        <state key="normal" image="close-button-outline 2"/>
                                         <connections>
                                             <action selector="close:" destination="Enz-Ez-zDq" eventType="touchUpInside" id="XyU-p4-YNu"/>
                                         </connections>
@@ -146,7 +146,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.61176470588235299" green="0.85490196078431369" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="eb6-aY-Jju" firstAttribute="leading" secondItem="LPI-wa-guo" secondAttribute="leading" constant="25" id="9OM-8C-ASE"/>
+                                    <constraint firstAttribute="trailing" secondItem="eb6-aY-Jju" secondAttribute="trailing" constant="25" id="NIx-lK-o1A"/>
                                     <constraint firstItem="eb6-aY-Jju" firstAttribute="top" secondItem="QiC-RM-G1i" secondAttribute="top" id="RIp-Sa-c9n"/>
                                     <constraint firstItem="IuC-X5-9Lz" firstAttribute="top" secondItem="LPI-wa-guo" secondAttribute="top" constant="25" id="eU2-Bw-4gC"/>
                                     <constraint firstItem="IuC-X5-9Lz" firstAttribute="centerY" secondItem="LPI-wa-guo" secondAttribute="centerY" id="pBn-P4-A3C"/>
@@ -196,7 +196,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close-button" width="32" height="32"/>
+        <image name="close-button-outline 2" width="32" height="32"/>
         <image name="github-octocat" width="600" height="315"/>
     </resources>
 </document>

@@ -22,7 +22,6 @@ class UserDetailsViewController: TransitionViewController, UITableViewDataSource
     }
 
     private func setup() {
-        self.repositoriesTableView.separatorInset = .zero
         self.usernameLabel.text = username
         self.userAvatar.layer.cornerRadius = 50
         self.userAvatar.clipsToBounds = true
@@ -45,12 +44,17 @@ class UserDetailsViewController: TransitionViewController, UITableViewDataSource
         return self.repositories.count
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
                                                        for: indexPath) as? RepositoryTableViewCell else {
                                                         return UITableViewCell()
         }
 
+        cell.backgroundColor = .clear
         cell.repositoryTitle.text = self.repositories[indexPath.row].name
         cell.repositorySubtitle.text = self.repositories[indexPath.row].language
 
